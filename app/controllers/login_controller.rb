@@ -32,7 +32,6 @@ class LoginController < ApplicationController
     end
     def edit
         @user = User.find(session[:user_id])
-        @event = Event.find(params[:id])
         @organized_events = Event.where(user: @user)
         @user_organized_array = [];
         @organized_events.each do |event|
